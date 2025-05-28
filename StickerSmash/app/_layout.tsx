@@ -3,10 +3,9 @@ import { Stack } from "expo-router";
 export default function RootLayout() {
   return <Stack>
   <Stack.Screen
-    name="index"
+    name="(tabs)"
     options={{
-      headerTitle: "Sticker Smash",
-      headerLeft: () => <></>, 
+      headerShown:false,
     }}
   />
 </Stack>
