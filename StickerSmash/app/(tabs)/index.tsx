@@ -8,7 +8,7 @@ export default function Index() {
       style={style.container}
     >
       <Text style={style.text}>Hello Rimzath</Text>
-      <Link href={"/about"} style={style.button}> Go to about sceen</Link>
+      
     </View>
   );
 }
