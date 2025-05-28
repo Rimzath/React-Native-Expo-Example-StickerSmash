@@ -1,3 +1,4 @@
+import { Link } from "expo-router";
 import { Text, View } from "react-native";
 import { StyleSheet } from "react-native";
 
@@ -7,6 +8,7 @@ export default function Index() {
       style={style.container}
     >
       <Text style={style.text}>Hello Rimzath</Text>
+      <Link href={"/about"} style={style.button}> Go to about sceen</Link>
     </View>
   );
 }
@@ -19,6 +21,11 @@ const style = StyleSheet.create({
     alignItems: "center",
   },
   text:{
+    color:"white",
+  },
+  button:{
+    fontSize: 20,
+    textDecorationLine:"underline",
     color:"white",
   }
 
