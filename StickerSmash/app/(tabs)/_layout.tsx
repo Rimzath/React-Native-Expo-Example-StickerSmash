@@ -5,8 +5,8 @@ export default function TabsLayout() {
   <Tabs.Screen
     name="index"
     options={{
-      headerTitle: "Sticker Smash",
-      headerLeft: () => <></>, 
+      headerTitle: "Sticker Smash", 
+      headerTitleAlign: "center"
     }}
   />
 </Tabs>
