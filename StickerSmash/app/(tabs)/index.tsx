@@ -13,7 +13,7 @@ export default function Index() {
       </View>
 
       <View style={styles.footerContainer}>
-        <Button label="Choose photo"/>
+        <Button label="Choose photo" theme="primary"/>
         <Button label="Use these photo"/>
       </View>
       
