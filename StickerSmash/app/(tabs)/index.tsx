@@ -12,8 +12,9 @@ export default function Index() {
         <ImageViewer imgSource={PlaceholderImage}/>
       </View>
 
-      <View>
+      <View style={styles.footerContainer}>
         <Button label="Choose photo"/>
+        <Button label="Use these photo"/>
       </View>
       
     </View>
@@ -28,6 +29,10 @@ const styles = StyleSheet.create({
   },
   imageContainer:{
     flex:1,
+  },
+  footerContainer:{
+    flex: 1/3,
+    alignItems: "center",
   },
 
 });
