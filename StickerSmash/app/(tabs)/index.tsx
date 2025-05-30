@@ -1,6 +1,6 @@
 import { StyleSheet , View} from "react-native";
 import * as ImagePicker from "expo-image-picker";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ImageViewer from "@/components/ImageViewer";
 import Button from "@/components/Button";
 import IconButton from "@/components/IconButton";
@@ -9,11 +9,14 @@ import EmojiPicker from "@/components/EmojiPicker";
 import EmojiList from "@/components/EmojiList";
 import EmojiSticker from "@/components/EmojiSticker";
 import { ImageSourcePropType } from "react-native";
+import * as MediaLibrary from 'expo-media-library';
+
 
 
 const PlaceholderImage = require("../../assets/images/background-image.png")
 
 export default function Index() {
+  const[permissionResponse,requestPermission] = MediaLibrary.usePermissions();
 
   const [selectedImage, setSelectedImage] = useState<string | undefined>(
     undefined
@@ -22,6 +25,11 @@ export default function Index() {
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
   const [pickedEmoji, setPickedEmoji] = useState<ImageSourcePropType | undefined>(undefined);
 
+  useEffect(()=>{
+    if(!permissionResponse?.granted){
+      requestPermission();
+    }
+  },[]);
   const pickImageAsync = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
       allowsEditing: true,
